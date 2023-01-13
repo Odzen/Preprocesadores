@@ -1,46 +1,21 @@
--var titulo = "Titulo p"
--var titulos = ["Titulo Principal", "Subtitulo 1", "Subtitulo 2"]
--var usuario = "Juanse"
+extend componentes/plantilla.pug
+block contenidos        
+    //- 
+        Un div se puede declarar como div.intro_image o simplemente .intro_image 
+        Si un div tiene solamente un elemento se puede declarar así  div: elemento
 
-mixin caja(imagen, titulo, contenido)
-        .caja 
-            .caja__imagen: img(src="images/"+imagen)
-            .caja__contenido 
-                h3= titulo
-                p= contenido
-                a.boton leer más
+    section.intro 
+        .intro__imagen: img(src="images/imagen.png")
+        .intro__contenido
+            h2 #{titulos[0]} 
+            p 
+                | Lorem inpsum
+                | Test
+                span Negrilla
+            a.boton Leer más
 
-
-doctype html 
-html 
-    head 
-        meta(charset="UFT-8")
-        link(rel="stylesheet", href="css/ejercicio-pug.css")
-
-    body 
-        header 
-            h1 PlatziGames
-            if usuario 
-                a Hola #{usuario}
-            else
-                a.boton Registro
-        
-        //- 
-            Un div se puede declarar como div.intro_image o simplemente .intro_image 
-            Si un div tiene solamente un elemento se puede declarar así  div: elemento
-
-        section.intro 
-            .intro__imagen: img(src="images/imagen.png")
-            .intro__contenido
-                h2 #{titulos[0]} 
-                p 
-                  | Lorem inpsum
-                  | Test
-                  span Negrilla
-                a.boton Leer más
-
-        main.contenido
-            each titulo in titulos 
-                +caja('imagen.png', titulo, 'Lorem inpsum')
+    main.contenido
+        each titulo in titulos 
+            +caja('imagen.png', titulo, 'Lorem inpsum')
 
 
