@@ -1,8 +1,8 @@
 .galeria{
-    width: 50%;
+    width: 60%;
     height: 250px;
     margin: 10px auto;
-    padding: 20px;
+    padding: 20px 0 0 30px;
     justify-content: space-evenly;
     @include caja;
     &__foto-principal {
