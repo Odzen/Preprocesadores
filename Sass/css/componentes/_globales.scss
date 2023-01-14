@@ -14,6 +14,30 @@ $color-variacion: #3f579a;
     background-color: $color-claro;
 }
 
+// Mixin con condicionales
+@mixin titulos($fuente){
+    @if $fuente==$Fuente1 {
+        font-family: $Fuente1;
+    } @else {
+        font-family: $Fuente2;
+        text-transform: uppercase;
+    }
+}
+
+// Funciones
+// Esto no es un buen ejemplo de cómo usar una función, pero está hecho con objetivo de aprendizaje
+@function get-opacity($color, $nivel) {
+    @return rgba($color, $nivel);
+}
+
+// Loop
+@each $header, $size in (h1: 30px, h2: 25px, h3: 20px) {
+    #{$header} {
+        font-size: $size;
+        margin: 0;
+    }
+}
+
 // Globals
 * {
     box-sizing: border-box;
@@ -21,7 +45,7 @@ $color-variacion: #3f579a;
 
 body {
     margin: 0;
-    font-family: $Fuente1;
+    @include titulos($Fuente1);
 }
 
 main {
