@@ -4,8 +4,7 @@
     margin: 30px auto 0 auto;
     padding: 20px 0 0 50px;
     border-radius: 20px;
-    background-color: $color-claro;
-    color: $color-primario;
+    @include caja;
 
     i {
         display: block;
